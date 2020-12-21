@@ -16,21 +16,21 @@ def prepare_A4toA5(path):
     # Dealing with the remaining pages
     remain_pages = pdf_in.getNumPages() % 4
     if remain_pages != 0:
-        last_page = pdf_in.getNumPages() // 4
-        pdf_out.addPage(pdf_in.getPage(last_page+1))
+        last_page = pdf_in.getNumPages() - remain_pages
+        pdf_out.addPage(pdf_in.getPage(last_page))
         
         if remain_pages == 4:
-            pdf_out.addPage(pdf_in.getPage(last_page+4))
-        else:
-            pdf_out.addBlankPage()
-
-        if remain_pages == 3:
             pdf_out.addPage(pdf_in.getPage(last_page+3))
         else:
             pdf_out.addBlankPage()
 
-        if remain_pages == 2:
+        if remain_pages >= 3:
             pdf_out.addPage(pdf_in.getPage(last_page+2))
+        else:
+            pdf_out.addBlankPage()
+
+        if remain_pages >= 2:
+            pdf_out.addPage(pdf_in.getPage(last_page+1))
         else:
             pdf_out.addBlankPage()
         
