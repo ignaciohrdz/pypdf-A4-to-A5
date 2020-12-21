@@ -1,11 +1,11 @@
 # Turning an A4 PDF into an A5 bound book with PyPDF2
 
-# Introduction
+## Introduction
 Let's face the truth: I suck when it comes to using a printer. I always get confused when I have to do something special in the GUIs of any existing PDF viewer.
 
 I wanted to print A4 documents so that I could have them as handy, convenient, nicely bound A5 books. So I decided to do some programming to overcome my stupidity.
 
-# The method
+## The method
 This is what you need to do to get A5 ready to bind books from any PDF.
 - Put you file in the 'input' folder.
 - Run "run.py" and follow the instructions.
